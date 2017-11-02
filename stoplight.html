@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Lila's Stoplight</title>
+  <link rel="canonical" href="https://canonical.com">
+  <script type="text/javascript">
+    function changeColor(){
+      var stoplight = document.getElementById("stoplight");
+      if (stoplight.classList.contains("red")) {
+        stoplight.classList.remove("red");
+        stoplight.classList.add("green");
+      }
+      else if (stoplight.classList.contains("green")) {
+        stoplight.classList.remove("green");
+        stoplight.classList.add("yellow");
+      }
+      else if (stoplight.classList.contains("yellow")) {
+        stoplight.classList.remove("yellow");
+        stoplight.classList.add("red");
+      }
+    };
+
+  </script>
+  <style>
+    body {
+      padding: 30px;
+      padding-top: calc(50vh - 91px);
+    }
+    #stoplight {
+      background-color: #333;
+      border-radius: 2px;
+      margin: 0 auto;
+      width: 40px;
+      padding: 10px 20px;
+    }
+    .light {
+      border-radius: 100px;
+      background-color: #eee;
+      height: 30px;
+      width: 30px;
+      margin: 15px auto;
+      border: 2px solid white;
+      -webkit-transition: all 0.2s ease-in; /* Safari */
+      transition: all 0.2s ease-in;
+    }
+    .red .light:nth-child(1) {
+      background-color: #d43c3a;
+    }
+    .yellow .light:nth-child(2) {
+      background-color: #ffba43;
+    }
+    .green .light:nth-child(3) {
+      background-color: #1fb955;
+    }
+  </style>
+</head>
+<body>
+  <div id="stoplight" class="green" onclick="changeColor();">
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+  </div>
+</body>
+</html>
